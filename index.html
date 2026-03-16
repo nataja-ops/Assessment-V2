@@ -37,8 +37,6 @@
             color: var(--gray-900);
             line-height: 1.6;
         }
-
-        /* ── HEADER ── */
         header {
             background: var(--primary);
             color: var(--white);
@@ -55,292 +53,74 @@
         .header-brand .logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.3px; }
         .header-brand .tool-name { font-size: 0.85rem; opacity: 0.7; margin-top: 0.1rem; }
         .header-right { display: flex; align-items: center; gap: 1rem; }
-        .pm-badge {
-            background: rgba(255,255,255,0.15);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: none;
-        }
+        .pm-badge { background: rgba(255,255,255,0.15); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; display: none; }
         .pm-badge.visible { display: block; }
-        .btn-logout {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: var(--white);
-            padding: 0.4rem 0.9rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            display: none;
-        }
+        .btn-logout { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 0.4rem 0.9rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; display: none; }
         .btn-logout.visible { display: block; }
         .btn-logout:hover { background: rgba(255,255,255,0.2); }
-
-        /* ── SCREENS ── */
         .screen { display: none; min-height: calc(100vh - 64px); }
         .screen.active { display: block; }
-
-        /* ── SETUP SCREEN ── */
-        .setup-wrap {
-            max-width: 560px;
-            margin: 4rem auto;
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-lg);
-        }
+        .setup-wrap { max-width: 560px; margin: 4rem auto; background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: var(--shadow-lg); }
         .setup-wrap h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem; }
         .setup-wrap p { color: var(--gray-500); margin-bottom: 2rem; font-size: 0.9rem; }
-
-        /* ── LOGIN SCREEN ── */
-        .login-wrap {
-            max-width: 480px;
-            margin: 5rem auto;
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-        }
-        .login-wrap .logo-circle {
-            width: 72px; height: 72px;
-            background: var(--primary);
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex; align-items: center; justify-content: center;
-        }
+        .login-wrap { max-width: 480px; margin: 5rem auto; background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: var(--shadow-lg); text-align: center; }
+        .login-wrap .logo-circle { width: 72px; height: 72px; background: var(--primary); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; }
         .login-wrap .logo-circle span { color: var(--white); font-size: 1.5rem; font-weight: 700; }
         .login-wrap h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem; }
         .login-wrap p { color: var(--gray-500); margin-bottom: 2rem; font-size: 0.9rem; }
-        .pm-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-        .pm-option {
-            padding: 0.875rem 1rem;
-            border: 2px solid var(--gray-200);
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--gray-700);
-            transition: all 0.15s;
-            text-align: left;
-        }
+        .pm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+        .pm-option { padding: 0.875rem 1rem; border: 2px solid var(--gray-200); border-radius: 10px; cursor: pointer; font-size: 0.9rem; font-weight: 500; color: var(--gray-700); transition: all 0.15s; text-align: left; }
         .pm-option:hover { border-color: var(--primary-light); background: var(--primary-bg); }
         .pm-option.selected { border-color: var(--primary); background: var(--primary-bg); color: var(--primary); }
         .pm-option .pm-icon { font-size: 1.2rem; margin-bottom: 0.25rem; }
-
-        /* ── PARTNERS DASHBOARD ── */
-        .dashboard-header {
-            background: var(--primary);
-            color: var(--white);
-            padding: 2rem 2rem 3.5rem;
-        }
+        .dashboard-header { background: var(--primary); color: var(--white); padding: 2rem 2rem 3.5rem; }
         .dashboard-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
         .dashboard-header p { opacity: 0.75; font-size: 0.9rem; }
-        .dashboard-content {
-            max-width: 1100px;
-            margin: -2rem auto 2rem;
-            padding: 0 2rem;
-        }
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .stat-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--shadow);
-        }
+        .dashboard-content { max-width: 1100px; margin: -2rem auto 2rem; padding: 0 2rem; }
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+        .stat-card { background: var(--white); border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: var(--shadow); }
         .stat-card .stat-label { font-size: 0.78rem; color: var(--gray-500); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
         .stat-card .stat-value { font-size: 2rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem; }
-        .partners-panel {
-            background: var(--white);
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-        }
-        .partners-panel-header {
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid var(--gray-200);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+        .partners-panel { background: var(--white); border-radius: 16px; box-shadow: var(--shadow-lg); overflow: hidden; }
+        .partners-panel-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
         .partners-panel-header h2 { font-size: 1.1rem; color: var(--gray-900); }
-        .partner-card {
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid var(--gray-100);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: background 0.15s;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
+        .partner-card { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background 0.15s; flex-wrap: wrap; gap: 0.75rem; }
         .partner-card:last-child { border-bottom: none; }
         .partner-card:hover { background: var(--gray-100); }
         .partner-card-left { display: flex; align-items: center; gap: 1rem; }
-        .partner-avatar {
-            width: 44px; height: 44px;
-            background: var(--primary-bg);
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 0.85rem;
-            flex-shrink: 0;
-        }
+        .partner-avatar { width: 44px; height: 44px; background: var(--primary-bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--primary); font-size: 0.85rem; flex-shrink: 0; }
         .partner-name { font-weight: 600; font-size: 1rem; color: var(--gray-900); }
         .partner-meta { font-size: 0.82rem; color: var(--gray-500); margin-top: 0.1rem; }
         .partner-card-right { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-        .status-pill {
-            padding: 0.3rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
+        .status-pill { padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
         .status-initial { background: var(--level1-bg); color: #92400E; }
         .status-active { background: var(--green-bg); color: #065F46; }
         .status-complete { background: var(--level3-bg); color: #5B21B6; }
         .status-new { background: var(--gray-100); color: var(--gray-500); }
-        .score-badge {
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--gray-700);
-        }
+        .score-badge { font-size: 0.82rem; font-weight: 600; color: var(--gray-700); }
         .partner-arrow { color: var(--gray-400); font-size: 1.2rem; }
-        .empty-state {
-            padding: 3rem;
-            text-align: center;
-            color: var(--gray-500);
-        }
-
-        /* ── PARTNER DETAIL ── */
-        .detail-header {
-            background: var(--primary);
-            color: var(--white);
-            padding: 1.5rem 2rem 3rem;
-        }
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: rgba(255,255,255,0.15);
-            border: none;
-            color: var(--white);
-            padding: 0.4rem 0.9rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.82rem;
-            margin-bottom: 1rem;
-        }
+        .empty-state { padding: 3rem; text-align: center; color: var(--gray-500); }
+        .detail-header { background: var(--primary); color: var(--white); padding: 1.5rem 2rem 3rem; }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.15); border: none; color: var(--white); padding: 0.4rem 0.9rem; border-radius: 6px; cursor: pointer; font-size: 0.82rem; margin-bottom: 1rem; }
         .back-btn:hover { background: rgba(255,255,255,0.25); }
         .detail-header h1 { font-size: 1.75rem; font-weight: 700; }
         .detail-header .meta-row { display: flex; gap: 1.5rem; margin-top: 0.5rem; opacity: 0.8; font-size: 0.85rem; flex-wrap: wrap; }
-        .detail-content {
-            max-width: 1000px;
-            margin: -2rem auto 2rem;
-            padding: 0 2rem;
-        }
-
-        /* Tabs */
-        .tab-nav {
-            background: var(--white);
-            border-radius: 12px 12px 0 0;
-            display: flex;
-            border-bottom: 2px solid var(--gray-200);
-            box-shadow: var(--shadow);
-            overflow-x: auto;
-        }
-        .tab-btn {
-            padding: 1rem 1.5rem;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: var(--gray-500);
-            white-space: nowrap;
-            border-bottom: 3px solid transparent;
-            margin-bottom: -2px;
-            transition: all 0.15s;
-        }
+        .detail-content { max-width: 1000px; margin: -2rem auto 2rem; padding: 0 2rem; }
+        .tab-nav { background: var(--white); border-radius: 12px 12px 0 0; display: flex; border-bottom: 2px solid var(--gray-200); box-shadow: var(--shadow); overflow-x: auto; }
+        .tab-btn { padding: 1rem 1.5rem; border: none; background: none; cursor: pointer; font-size: 0.88rem; font-weight: 500; color: var(--gray-500); white-space: nowrap; border-bottom: 3px solid transparent; margin-bottom: -2px; transition: all 0.15s; }
         .tab-btn:hover { color: var(--primary); }
         .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary-light); font-weight: 600; }
-        .tab-content {
-            background: var(--white);
-            border-radius: 0 0 12px 12px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            display: none;
-        }
+        .tab-content { background: var(--white); border-radius: 0 0 12px 12px; padding: 2rem; box-shadow: var(--shadow); display: none; }
         .tab-content.active { display: block; }
-
-        /* ── FORM ELEMENTS ── */
         .form-group { margin-bottom: 1.25rem; }
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--gray-700);
-            margin-bottom: 0.4rem;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.7rem 1rem;
-            border: 2px solid var(--gray-200);
-            border-radius: 8px;
-            font-size: 0.95rem;
-            color: var(--gray-900);
-            background: var(--white);
-            transition: border-color 0.15s;
-            font-family: inherit;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.4rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.7rem 1rem; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 0.95rem; color: var(--gray-900); background: var(--white); transition: border-color 0.15s; font-family: inherit; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
         .form-group textarea { resize: vertical; min-height: 80px; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-        /* ── RUBRIC UI ── */
-        .rubric-intro {
-            background: var(--primary-bg);
-            border-radius: 10px;
-            padding: 1rem 1.25rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.88rem;
-            color: var(--primary);
-            border: 1px solid rgba(45,212,191,0.3);
-        }
-        .summary-strip {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-        .summary-card {
-            background: var(--gray-100);
-            border-radius: 10px;
-            padding: 1rem;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.15s;
-        }
+        .rubric-intro { background: var(--primary-bg); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--primary); border: 1px solid rgba(45,212,191,0.3); }
+        .summary-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem; }
+        .summary-card { background: var(--gray-100); border-radius: 10px; padding: 1rem; cursor: pointer; border: 2px solid transparent; transition: all 0.15s; }
         .summary-card:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
         .summary-card.active { border-color: var(--primary); background: var(--primary-bg); }
         .summary-card .sc-name { font-size: 0.75rem; color: var(--gray-500); font-weight: 500; margin-bottom: 0.3rem; }
@@ -351,70 +131,26 @@
         .sc-fill.l1 { background: var(--level1); }
         .sc-fill.l2 { background: var(--level2); }
         .sc-fill.l3 { background: var(--level3); }
-        .domain-block {
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            transition: box-shadow 0.15s;
-        }
+        .domain-block { border: 1px solid var(--gray-200); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; transition: box-shadow 0.15s; }
         .domain-block.expanded { box-shadow: var(--shadow); }
-        .domain-header {
-            padding: 1rem 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            background: var(--white);
-            user-select: none;
-        }
+        .domain-header { padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; background: var(--white); user-select: none; }
         .domain-header:hover { background: var(--gray-100); }
         .domain-title { display: flex; align-items: center; gap: 0.75rem; }
-        .domain-num {
-            width: 28px; height: 28px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 6px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.78rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
+        .domain-num { width: 28px; height: 28px; background: var(--primary); color: var(--white); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
         .domain-name { font-weight: 600; font-size: 0.95rem; color: var(--gray-900); }
         .domain-right { display: flex; align-items: center; gap: 0.75rem; }
-        .domain-score-badge {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--gray-500);
-            background: var(--gray-100);
-            padding: 0.2rem 0.6rem;
-            border-radius: 10px;
-        }
+        .domain-score-badge { font-size: 0.8rem; font-weight: 600; color: var(--gray-500); background: var(--gray-100); padding: 0.2rem 0.6rem; border-radius: 10px; }
         .chevron { color: var(--gray-400); font-size: 1rem; transition: transform 0.2s; }
         .domain-block.expanded .chevron { transform: rotate(180deg); }
         .domain-body { display: none; border-top: 1px solid var(--gray-200); }
         .domain-block.expanded .domain-body { display: block; }
-        .subdomain-block {
-            border-bottom: 1px solid var(--gray-100);
-            background: var(--white);
-        }
+        .subdomain-block { border-bottom: 1px solid var(--gray-100); background: var(--white); }
         .subdomain-block:last-child { border-bottom: none; }
-        .subdomain-header {
-            padding: 0.875rem 1.25rem 0.875rem 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-        }
+        .subdomain-header { padding: 0.875rem 1.25rem 0.875rem 1.5rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
         .subdomain-header:hover { background: var(--gray-100); }
         .subdomain-name { font-size: 0.9rem; font-weight: 500; color: var(--gray-700); }
         .subdomain-right { display: flex; align-items: center; gap: 0.5rem; }
-        .level-chip {
-            font-size: 0.72rem;
-            font-weight: 600;
-            padding: 0.2rem 0.6rem;
-            border-radius: 10px;
-        }
+        .level-chip { font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 10px; }
         .lc-unrated { background: var(--gray-100); color: var(--gray-500); }
         .lc-0 { background: var(--level0-bg); color: #374151; }
         .lc-1 { background: var(--level1-bg); color: #92400E; }
@@ -423,190 +159,71 @@
         .subdomain-body { display: none; padding: 0 1.5rem 1.25rem; background: #FAFAFA; }
         .subdomain-block.expanded .subdomain-body { display: block; }
         .level-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.6rem; margin-top: 0.75rem; }
-        .level-option {
-            border: 2px solid var(--gray-200);
-            border-radius: 10px;
-            padding: 0.875rem;
-            cursor: pointer;
-            transition: all 0.15s;
-            position: relative;
-        }
+        .level-option { border: 2px solid var(--gray-200); border-radius: 10px; padding: 0.875rem; cursor: pointer; transition: all 0.15s; position: relative; }
         .level-option:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
         .level-option.selected { border-width: 2px; }
-        .level-option.l0 { }
         .level-option.l0.selected { border-color: var(--level0); background: var(--level0-bg); }
         .level-option.l1.selected { border-color: var(--level1); background: var(--level1-bg); }
         .level-option.l2.selected { border-color: var(--level2); background: var(--level2-bg); }
         .level-option.l3.selected { border-color: var(--level3); background: var(--level3-bg); }
-        .level-badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 0.15rem 0.5rem;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 0.3rem;
-        }
+        .level-badge { font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 6px; display: inline-block; margin-bottom: 0.3rem; }
         .lb-0 { background: var(--level0-bg); color: #374151; }
         .lb-1 { background: var(--level1-bg); color: #92400E; }
         .lb-2 { background: var(--level2-bg); color: #1E293B; }
         .lb-3 { background: var(--level3-bg); color: #5B21B6; }
         .level-option-title { font-size: 0.78rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.3rem; }
         .level-option-desc { font-size: 0.78rem; color: var(--gray-500); line-height: 1.4; }
-        .check-mark {
-            position: absolute;
-            top: 0.6rem; right: 0.6rem;
-            width: 18px; height: 18px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: none;
-            align-items: center; justify-content: center;
-        }
+        .check-mark { position: absolute; top: 0.6rem; right: 0.6rem; width: 18px; height: 18px; border-radius: 50%; background: var(--primary); display: none; align-items: center; justify-content: center; }
         .level-option.selected .check-mark { display: flex; }
         .check-mark svg { width: 10px; height: 10px; stroke: white; stroke-width: 3; }
-
-        /* ── GOALS TAB ── */
-        .goal-card {
-            border: 1px solid var(--gray-200);
-            border-radius: 10px;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            position: relative;
-        }
+        .goal-card { border: 1px solid var(--gray-200); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; position: relative; }
         .goal-card .goal-domain { font-size: 0.75rem; color: var(--gray-500); font-weight: 500; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .goal-card .goal-subdomain { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.75rem; }
         .goal-arrow { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; margin-bottom: 0.5rem; }
         .goal-level { padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 600; font-size: 0.78rem; }
         .arrow-icon { color: var(--gray-400); }
         .goal-note { font-size: 0.83rem; color: var(--gray-500); margin-top: 0.5rem; font-style: italic; }
-        .delete-btn {
-            position: absolute; top: 0.75rem; right: 0.75rem;
-            background: none; border: none;
-            cursor: pointer; color: var(--gray-400); font-size: 1.1rem;
-        }
+        .delete-btn { position: absolute; top: 0.75rem; right: 0.75rem; background: none; border: none; cursor: pointer; color: var(--gray-400); font-size: 1.1rem; }
         .delete-btn:hover { color: #DC2626; }
-        .add-goal-form {
-            background: var(--gray-100);
-            border-radius: 10px;
-            padding: 1.25rem;
-            margin-top: 1rem;
-            border: 2px dashed var(--gray-300);
-        }
+        .add-goal-form { background: var(--gray-100); border-radius: 10px; padding: 1.25rem; margin-top: 1rem; border: 2px dashed var(--gray-300); }
         .add-goal-form h4 { margin-bottom: 1rem; font-size: 0.9rem; color: var(--gray-700); }
-
-        /* ── PROGRESS TAB ── */
-        .checkin-card {
-            border: 1px solid var(--gray-200);
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-        .checkin-header {
-            padding: 1rem 1.25rem;
-            background: var(--gray-100);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        .checkin-card { border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 1rem; overflow: hidden; }
+        .checkin-header { padding: 1rem 1.25rem; background: var(--gray-100); display: flex; align-items: center; justify-content: space-between; }
         .checkin-title { font-weight: 600; font-size: 0.9rem; }
         .checkin-date { font-size: 0.8rem; color: var(--gray-500); }
         .checkin-body { padding: 1.25rem; }
-
-        /* ── FINAL ASSESSMENT ── */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0;
-            border: 1px solid var(--gray-200);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-        .comp-header {
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.75rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        .comp-cell {
-            padding: 0.75rem 1rem;
-            border-top: 1px solid var(--gray-200);
-            border-right: 1px solid var(--gray-200);
-            font-size: 0.85rem;
-        }
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; border: 1px solid var(--gray-200); border-radius: 10px; overflow: hidden; margin-bottom: 1.5rem; }
+        .comp-header { background: var(--primary); color: var(--white); padding: 0.75rem 1rem; font-size: 0.8rem; font-weight: 600; }
+        .comp-cell { padding: 0.75rem 1rem; border-top: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200); font-size: 0.85rem; }
         .comp-cell:nth-child(3n) { border-right: none; }
         .comp-cell.subdomain-label { font-weight: 500; color: var(--gray-700); }
         .comp-cell.level-val { text-align: center; font-weight: 600; }
         .progress-up { color: var(--green); }
         .progress-same { color: var(--gray-500); }
-        .progress-section-head {
-            background: var(--gray-100);
-            padding: 0.5rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--gray-500);
-            border-top: 1px solid var(--gray-200);
-        }
-
-        /* ── BUTTONS ── */
-        .btn {
-            padding: 0.7rem 1.5rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            border: none;
-            transition: all 0.15s;
-        }
+        .progress-section-head { background: var(--gray-100); padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-500); border-top: 1px solid var(--gray-200); }
+        .btn { padding: 0.7rem 1.5rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.15s; }
         .btn-primary { background: var(--primary); color: var(--white); }
         .btn-primary:hover { background: #243660; }
         .btn-teal { background: var(--primary-light); color: var(--primary); }
         .btn-teal:hover { background: #22BFA8; }
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
         .btn-outline:hover { background: var(--primary-bg); }
         .btn-sm { padding: 0.45rem 0.9rem; font-size: 0.8rem; }
         .btn-green { background: var(--green); color: var(--white); }
         .btn-green:hover { background: #047857; }
         .btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
-
-        /* ── ALERTS ── */
-        .alert {
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
+        .alert { padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.85rem; margin-bottom: 1rem; }
         .alert-success { background: var(--green-bg); color: #065F46; }
         .alert-error { background: #FEE2E2; color: #991B1B; }
         .alert-info { background: var(--primary-bg); color: var(--primary); border: 1px solid rgba(45,212,191,0.4); }
-
-        /* ── UTILITIES ── */
         .section-title { font-size: 1rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem; }
         .divider { border: none; border-top: 1px solid var(--gray-200); margin: 1.5rem 0; }
         .text-sm { font-size: 0.85rem; }
         .text-muted { color: var(--gray-500); }
-        .spinner {
-            display: inline-block;
-            width: 16px; height: 16px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.7s linear infinite;
-        }
+        .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        .save-indicator {
-            font-size: 0.78rem;
-            color: var(--green);
-            display: none;
-        }
+        .save-indicator { font-size: 0.78rem; color: var(--green); display: none; }
         .save-indicator.visible { display: inline; }
-
         @media (max-width: 768px) {
             .form-row { grid-template-columns: 1fr; }
             .stats-row { grid-template-columns: 1fr 1fr; }
@@ -638,7 +255,7 @@
         <div class="logo-circle"><span>ai</span></div>
         <h2>Partnership Manager Login</h2>
         <p>Select your name to see your partners, or type it if you don't see it listed.</p>
-        <div class="pm-grid" id="pmGrid"><!-- populated by JS --></div>
+        <div class="pm-grid" id="pmGrid"></div>
         <div class="form-group" style="margin-top:0.5rem;">
             <input type="text" id="pmCustomName" placeholder="Or type your name here…" oninput="onCustomName(this.value)">
         </div>
@@ -855,197 +472,66 @@ const LEVEL_FILL = ['l0', 'l1', 'l2', 'l3'];
 const LB_COLORS = ['lb-0', 'lb-1', 'lb-2', 'lb-3'];
 
 const DISTRICT_RUBRIC = [
-    {
-        id: 'vision', name: 'Develop Equitable Vision for AI Readiness',
-        subdomains: [
-            { id: 'vision-student', name: 'Vision for Student Readiness', levels: [
-                'Identify AI Readiness points of connection and gaps in existing district student outcome goals (e.g., examining the Portrait of a Graduate in the world of AI)',
-                'Develop and share clear student outcome goals that incorporate AI Readiness (e.g., reimagining the Portrait of a Graduate in the world of AI)',
-                'Embed AI-ready student outcome goals in student assessment structures and have a process established for reporting on and revising student outcome goals'
-            ]},
-            { id: 'vision-system', name: 'Vision for System AI Use', levels: [
-                'Define AI Readiness competencies for all district roles; define vision for AI use and integration across district systems',
-                'Create and implement aligned support for developing AI Readiness competencies across all district roles; pilot AI use integration in systems across the district',
-                'Embed AI Readiness competencies in existing performance management systems or structures; embed system-wide AI use training and ongoing evaluation of efficacy'
-            ]},
-            { id: 'vision-instruction', name: 'Vision for AI Use in Instruction', levels: [
-                'Define criteria for AI use in instruction anchored in strong pedagogical practices',
-                'Pilot implementation of criteria for AI use in instruction for tool evaluation and instructional trainings',
-                'Expand and iterate on implementation of criteria for AI use in instruction across instructional domains'
-            ]}
-        ]
-    },
-    {
-        id: 'strategy', name: 'Develop a Strategy',
-        subdomains: [
-            { id: 'strategy-set', name: 'Set Strategy', levels: [
-                'Review current strategic plan and change management; identify points of connection and possible challenges that AI Readiness presents',
-                'Identify places ready for innovation to pilot AI Readiness implementations (e.g., a particular school, a particular content area across multiple schools); implement pilots',
-                'Apply learnings from pilot implementations to expand AI Readiness implementation across all district functions; establish feedback loops to gather data on implementations'
-            ]},
-            { id: 'strategy-change', name: 'Plan for Change', levels: [
-                'Identify key people (i.e., leaders of areas of impact: operations, teaching & learning, programs) within the district to bring into the strategic planning',
-                'Establish and implement a formal structure (e.g., task force) for diverse stakeholder input on AI Readiness strategic plan and decisions on information flow going out of the district',
-                'Establish ownership of ongoing leadership of the formal structure that continues to meet to assess implementation, discuss issues that are arising with implementation, and make revisions/adjustments'
-            ]}
-        ]
-    },
-    {
-        id: 'stakeholders', name: 'Galvanize Stakeholders',
-        subdomains: [
-            { id: 'stakeholders-context', name: 'Context Gathering', levels: [
-                'Informally gather input (e.g., survey, focus groups) from students, families, teachers, staff, and board members on AI literacy & AI Readiness needs',
-                'District stakeholders have a role in the AI Readiness task force and/or are providing feedback & guidance on the strategic vision & plan',
-                'Establish regular cadence for gathering feedback and needs from stakeholders'
-            ]},
-            { id: 'stakeholders-engage', name: 'Engage and Learn', levels: [
-                'Identify potential local industry and post-secondary organizations to learn from on AI impacts on the community',
-                'Develop partnerships with local industry and post-secondary organizations to identify key AI impacts on community',
-                'Deepen ongoing partnerships with local and post-secondary organizations to support AI readiness skill-building aligned to community needs'
-            ]},
-            { id: 'stakeholders-communicate', name: 'Communicate and Educate', levels: [
-                'Identify key communication pathways to various stakeholders (e.g., parent newsletters, teacher messages, board meetings)',
-                'Set a regular cadence of communication to all stakeholders on AI readiness implementation aligned to existing communication structures',
-                'Refine communication on AI readiness implementation and have regular opportunities for community stakeholders to engage in learning on AI literacy and readiness implementation'
-            ]}
-        ]
-    },
-    {
-        id: 'policy', name: 'Set Conditions through Policy & Operations',
-        subdomains: [
-            { id: 'policy-guardrails', name: 'Guardrails', levels: [
-                'Identify gaps or areas for adaptation for AI Readiness in existing technology and academic integrity policies',
-                'Draft inclusive, adaptive, and transparent guardrails for ethical use of AI and safeguarding of student data',
-                'Iterate on AI guardrails, leveraging feedback from stakeholders, and integrating to existing tech stack acceptable use guidelines'
-            ]},
-            { id: 'policy-processes', name: 'Processes', levels: [
-                'Evaluate current tech procurement processes, existing tech stack in use, and tech efficacy measures in place',
-                'Create an updated tech procurement process that accounts for AI tool-specific needs and an evaluation plan for measuring success of tools in use; pilot the process',
-                'Full-system roll out of updated tech procurement and piloting process. Monitor efficacy through an ongoing review of tools in use'
-            ]}
-        ]
-    },
-    {
-        id: 'teaching', name: 'Enable Teaching & Learning',
-        subdomains: [
-            { id: 'teaching-capacity', name: 'Capacity Building', levels: [
-                'Provide foundational-level trainings with targeted school and teacher leaders, aligning training with AI readiness competencies for given roles',
-                'Scale foundational level training for all instructional staff and provide deeper application for those that have completed foundational level trainings',
-                'Provide ongoing, differentiated, integrated deeper application trainings for all instructional staff; foundational training integrated into new hire trainings'
-            ]},
-            { id: 'teaching-materials', name: 'Instructional Materials', levels: [
-                'Identify processes for evaluating district-approved instructional materials to support AI Readiness student outcomes',
-                'Evaluate district-approved instructional materials for AI Readiness and provide recommendations for curriculum changes',
-                'Implement updated curriculum and engage in ongoing analysis of efficacy of instructional materials'
-            ]},
-            { id: 'teaching-dept', name: 'Departmental Alignment', levels: [
-                'Identify all district-wide departments (e.g., multi-lingual learners, career pathways) that will need updating to align with student AI Readiness outcomes',
-                'Prioritize departments for student AI Readiness alignment updates based on district vision',
-                'Prioritized department programs are updated for student AI Readiness outcomes and aligned to district vision, with clear processes for replication'
-            ]},
-            { id: 'teaching-tools', name: 'Tool Selection for Instruction', levels: [
-                'Define what a strong instructional AI tool is, anchored in student learning and AI Readiness outcomes',
-                'Implement criteria for instructional AI tool selection to evaluate and streamline existing district-approved instructional tools',
-                'Evolve criteria for instructional tool selection and apply to existing and new tool selection processes'
-            ]}
-        ]
-    }
+    { id: 'vision', name: 'Develop Equitable Vision for AI Readiness', subdomains: [
+        { id: 'vision-student', name: 'Vision for Student Readiness', levels: ['Identify AI Readiness points of connection and gaps in existing district student outcome goals (e.g., examining the Portrait of a Graduate in the world of AI)','Develop and share clear student outcome goals that incorporate AI Readiness (e.g., reimagining the Portrait of a Graduate in the world of AI)','Embed AI-ready student outcome goals in student assessment structures and have a process established for reporting on and revising student outcome goals']},
+        { id: 'vision-system', name: 'Vision for System AI Use', levels: ['Define AI Readiness competencies for all district roles; define vision for AI use and integration across district systems','Create and implement aligned support for developing AI Readiness competencies across all district roles; pilot AI use integration in systems across the district','Embed AI Readiness competencies in existing performance management systems or structures; embed system-wide AI use training and ongoing evaluation of efficacy']},
+        { id: 'vision-instruction', name: 'Vision for AI Use in Instruction', levels: ['Define criteria for AI use in instruction anchored in strong pedagogical practices','Pilot implementation of criteria for AI use in instruction for tool evaluation and instructional trainings','Expand and iterate on implementation of criteria for AI use in instruction across instructional domains']}
+    ]},
+    { id: 'strategy', name: 'Develop a Strategy', subdomains: [
+        { id: 'strategy-set', name: 'Set Strategy', levels: ['Review current strategic plan and change management; identify points of connection and possible challenges that AI Readiness presents','Identify places ready for innovation to pilot AI Readiness implementations (e.g., a particular school, a particular content area across multiple schools); implement pilots','Apply learnings from pilot implementations to expand AI Readiness implementation across all district functions; establish feedback loops to gather data on implementations']},
+        { id: 'strategy-change', name: 'Plan for Change', levels: ['Identify key people (i.e., leaders of areas of impact: operations, teaching & learning, programs) within the district to bring into the strategic planning','Establish and implement a formal structure (e.g., task force) for diverse stakeholder input on AI Readiness strategic plan and decisions on information flow going out of the district','Establish ownership of ongoing leadership of the formal structure that continues to meet to assess implementation, discuss issues that are arising with implementation, and make revisions/adjustments']}
+    ]},
+    { id: 'stakeholders', name: 'Galvanize Stakeholders', subdomains: [
+        { id: 'stakeholders-context', name: 'Context Gathering', levels: ['Informally gather input (e.g., survey, focus groups) from students, families, teachers, staff, and board members on AI literacy & AI Readiness needs','District stakeholders have a role in the AI Readiness task force and/or are providing feedback & guidance on the strategic vision & plan','Establish regular cadence for gathering feedback and needs from stakeholders']},
+        { id: 'stakeholders-engage', name: 'Engage and Learn', levels: ['Identify potential local industry and post-secondary organizations to learn from on AI impacts on the community','Develop partnerships with local industry and post-secondary organizations to identify key AI impacts on community','Deepen ongoing partnerships with local and post-secondary organizations to support AI readiness skill-building aligned to community needs']},
+        { id: 'stakeholders-communicate', name: 'Communicate and Educate', levels: ['Identify key communication pathways to various stakeholders (e.g., parent newsletters, teacher messages, board meetings)','Set a regular cadence of communication to all stakeholders on AI readiness implementation aligned to existing communication structures','Refine communication on AI readiness implementation and have regular opportunities for community stakeholders to engage in learning on AI literacy and readiness implementation']}
+    ]},
+    { id: 'policy', name: 'Set Conditions through Policy & Operations', subdomains: [
+        { id: 'policy-guardrails', name: 'Guardrails', levels: ['Identify gaps or areas for adaptation for AI Readiness in existing technology and academic integrity policies','Draft inclusive, adaptive, and transparent guardrails for ethical use of AI and safeguarding of student data','Iterate on AI guardrails, leveraging feedback from stakeholders, and integrating to existing tech stack acceptable use guidelines']},
+        { id: 'policy-processes', name: 'Processes', levels: ['Evaluate current tech procurement processes, existing tech stack in use, and tech efficacy measures in place','Create an updated tech procurement process that accounts for AI tool-specific needs and an evaluation plan for measuring success of tools in use; pilot the process','Full-system roll out of updated tech procurement and piloting process. Monitor efficacy through an ongoing review of tools in use']}
+    ]},
+    { id: 'teaching', name: 'Enable Teaching & Learning', subdomains: [
+        { id: 'teaching-capacity', name: 'Capacity Building', levels: ['Provide foundational-level trainings with targeted school and teacher leaders, aligning training with AI readiness competencies for given roles','Scale foundational level training for all instructional staff and provide deeper application for those that have completed foundational level trainings','Provide ongoing, differentiated, integrated deeper application trainings for all instructional staff; foundational training integrated into new hire trainings']},
+        { id: 'teaching-materials', name: 'Instructional Materials', levels: ['Identify processes for evaluating district-approved instructional materials to support AI Readiness student outcomes','Evaluate district-approved instructional materials for AI Readiness and provide recommendations for curriculum changes','Implement updated curriculum and engage in ongoing analysis of efficacy of instructional materials']},
+        { id: 'teaching-dept', name: 'Departmental Alignment', levels: ['Identify all district-wide departments (e.g., multi-lingual learners, career pathways) that will need updating to align with student AI Readiness outcomes','Prioritize departments for student AI Readiness alignment updates based on district vision','Prioritized department programs are updated for student AI Readiness outcomes and aligned to district vision, with clear processes for replication']},
+        { id: 'teaching-tools', name: 'Tool Selection for Instruction', levels: ['Define what a strong instructional AI tool is, anchored in student learning and AI Readiness outcomes','Implement criteria for instructional AI tool selection to evaluate and streamline existing district-approved instructional tools','Evolve criteria for instructional tool selection and apply to existing and new tool selection processes']}
+    ]}
 ];
 
-// ── SCHOOL RUBRIC (AI Readiness Framework v2.0) ────────────────
 const SCHOOL_RUBRIC = [
-    {
-        id: 'school-vision', name: 'Connect District Vision to School Implementation',
-        subdomains: [
-            { id: 'sv-student', name: 'Vision for Student AI Readiness', levels: [
-                'Identify points of alignment and gaps in current school instructional goals and district student AI Readiness outcomes',
-                'Develop school instructional goals aligned to updated district vision for student AI Readiness',
-                'Embed student AI Readiness outcomes within student assessment structures'
-            ]},
-            { id: 'sv-system', name: 'Vision for School AI Use', levels: [
-                'Map district AI Readiness competencies for different roles to given school structure and roles',
-                'Implement aligned support for developing AI Readiness competencies across all school staff roles',
-                'Consistently use AI Readiness competencies in existing district performance management systems or structures'
-            ]},
-            { id: 'sv-instruction', name: 'Vision for AI Use in Instruction', levels: [
-                'Internalize district criteria for AI use in instruction anchored in strong pedagogical practices',
-                'Pilot implementation of criteria for AI use in instruction for tool evaluation and instructional trainings',
-                'Expand and iterate on implementation of criteria for AI use in instruction across instructional domains'
-            ]}
-        ]
-    },
-    {
-        id: 'school-stakeholders', name: 'Galvanize Stakeholders',
-        subdomains: [
-            { id: 'ss-context', name: 'Context Gathering', levels: [
-                'Informally gather input (e.g., survey, focus groups) from students, teachers, staff, family and community members on AI in education to inform key priorities for AI Readiness implementation',
-                'Implement regular communications with families about AI Readiness efforts and engage community partners in school AI Readiness initiatives',
-                'Use family and community feedback to continuously improve AI Readiness strategies and position school as a community resource for AI literacy'
-            ]},
-            { id: 'ss-communicate', name: 'Communicate and Educate', levels: [
-                'Identify key communication pathways to various stakeholders (e.g., parent newsletters, teacher messages, student notes)',
-                'Set a regular cadence of communication to all stakeholders on AI Readiness implementation aligned to existing communication structures, including learning opportunities for stakeholders on updates',
-                'Refine communication on AI Readiness implementation and have regular opportunities for community stakeholders to engage in learning, development of AI literacy and AI Readiness implementation'
-            ]}
-        ]
-    },
-    {
-        id: 'school-policy', name: 'Set Conditions through Policy & Operations',
-        subdomains: [
-            { id: 'sp-guardrails', name: 'Guardrails', levels: [
-                'Identify gaps or areas for adaptation for AI Readiness in existing technology and academic integrity policies (e.g., acceptable use policies)',
-                'Draft an inclusive, adaptive and transparent guardrails for ethical use of AI and safeguarding of student data by students, teachers, leadership, and staff',
-                'Iterate on AI guardrails, leveraging feedback from stakeholders, and integrating to existing tech stack acceptable use guidelines'
-            ]},
-            { id: 'sp-processes', name: 'Processes', levels: [
-                'Evaluate current tech procurement processes, existing tech stack in use, and tech efficacy measures in place',
-                'Create an updated tech procurement process that accounts for AI tool-specific needs, a plan for keeping or sunsetting any existing tech tools in use, and an evaluation plan for measuring success of tools in use; pilot the use of the process',
-                'Full-system roll out of updated tech procurement and piloting process; monitor efficacy and success of implemented tools through an ongoing review of tools in use that accommodates the pace of change of AI technology and new tools coming to market'
-            ]}
-        ]
-    },
-    {
-        id: 'school-teaching', name: 'Enable Teaching & Learning',
-        subdomains: [
-            { id: 'st-leadership', name: 'Instructional Leadership', levels: [
-                'Assess current teacher (and self) AI knowledge and comfort levels, along with early AI adopters that can serve as AI Readiness champions to identify AI Readiness instructional priorities (e.g., AI tool use, rethinking assignments in the age of AI, integrating AI literacy skill-building to core curriculum), aligned to school-specific AI Readiness goals',
-                'Establish and implement collaborative, structured, and connected opportunities for teachers to develop AI Readiness skills aligned to school-specific AI Readiness goals (e.g., school-wide PLC on AI tool use for a specific teaching task, with examples, opportunities for feedback and revision, and reviewing student work)',
-                'Integrate ongoing, job-embedded professional learning on AI Readiness within teacher development systems. Use instructional data, feedback from teachers, and responsiveness to rapidly changing landscape to continually refine teacher development and leadership for AI Readiness'
-            ]},
-            { id: 'st-coaching', name: 'Observation & Coaching', levels: [
-                'Conduct observations to identify levels of AI Readiness happening in classrooms',
-                'Incorporate AI Readiness considerations into informal classroom observations and 1:1 coaching, aligned to school-specific AI Readiness goals and instructional priorities',
-                'Establish ongoing, differentiated coaching cycles that use multiple data sources to deepen individual teachers\' AI Readiness and instructional effectiveness'
-            ]},
-            { id: 'st-materials', name: 'Instructional Materials', levels: [
-                'With department or instructional leaders, identify key criteria to evaluate existing and new instructional materials for supporting student AI Readiness and content outcomes, aligning to vision of AI use in instruction',
-                'Lead instructional leadership team in evaluating a prioritized set of instructional materials for AI Readiness; share recommendations for changes to curriculum to meet student AI Readiness and content outcomes',
-                'Support instructional teams in implementing updated curriculum aligned to student AI Readiness and content outcomes; establish ongoing analysis of efficacy of materials through student and teaching data'
-            ]},
-            { id: 'st-tools', name: 'Tool Selection for Instruction', levels: [
-                'Define what a strong instructional AI tool is, anchored in student learning and AI Readiness outcomes',
-                'Implement criteria for instructional AI tool selection to evaluate and streamline existing district-approved instructional tools; ensure alignment to overall district tech procurement processes',
-                'Evolve criteria for instructional tool selection and apply to existing and new tool selection processes'
-            ]}
-        ]
-    }
+    { id: 'school-vision', name: 'Connect District Vision to School Implementation', subdomains: [
+        { id: 'sv-student', name: 'Vision for Student AI Readiness', levels: ['Identify points of alignment and gaps in current school instructional goals and district student AI Readiness outcomes','Develop school instructional goals aligned to updated district vision for student AI Readiness','Embed student AI Readiness outcomes within student assessment structures']},
+        { id: 'sv-system', name: 'Vision for School AI Use', levels: ['Map district AI Readiness competencies for different roles to given school structure and roles','Implement aligned support for developing AI Readiness competencies across all school staff roles','Consistently use AI Readiness competencies in existing district performance management systems or structures']},
+        { id: 'sv-instruction', name: 'Vision for AI Use in Instruction', levels: ['Internalize district criteria for AI use in instruction anchored in strong pedagogical practices','Pilot implementation of criteria for AI use in instruction for tool evaluation and instructional trainings','Expand and iterate on implementation of criteria for AI use in instruction across instructional domains']}
+    ]},
+    { id: 'school-stakeholders', name: 'Galvanize Stakeholders', subdomains: [
+        { id: 'ss-context', name: 'Context Gathering', levels: ['Informally gather input (e.g., survey, focus groups) from students, teachers, staff, family and community members on AI in education to inform key priorities for AI Readiness implementation','Implement regular communications with families about AI Readiness efforts and engage community partners in school AI Readiness initiatives','Use family and community feedback to continuously improve AI Readiness strategies and position school as a community resource for AI literacy']},
+        { id: 'ss-communicate', name: 'Communicate and Educate', levels: ['Identify key communication pathways to various stakeholders (e.g., parent newsletters, teacher messages, student notes)','Set a regular cadence of communication to all stakeholders on AI Readiness implementation aligned to existing communication structures, including learning opportunities for stakeholders on updates','Refine communication on AI Readiness implementation and have regular opportunities for community stakeholders to engage in learning, development of AI literacy and AI Readiness implementation']}
+    ]},
+    { id: 'school-policy', name: 'Set Conditions through Policy & Operations', subdomains: [
+        { id: 'sp-guardrails', name: 'Guardrails', levels: ['Identify gaps or areas for adaptation for AI Readiness in existing technology and academic integrity policies (e.g., acceptable use policies)','Draft an inclusive, adaptive and transparent guardrails for ethical use of AI and safeguarding of student data by students, teachers, leadership, and staff','Iterate on AI guardrails, leveraging feedback from stakeholders, and integrating to existing tech stack acceptable use guidelines']},
+        { id: 'sp-processes', name: 'Processes', levels: ['Evaluate current tech procurement processes, existing tech stack in use, and tech efficacy measures in place','Create an updated tech procurement process that accounts for AI tool-specific needs, a plan for keeping or sunsetting any existing tech tools in use, and an evaluation plan for measuring success of tools in use; pilot the use of the process','Full-system roll out of updated tech procurement and piloting process; monitor efficacy and success of implemented tools through an ongoing review of tools in use that accommodates the pace of change of AI technology and new tools coming to market']}
+    ]},
+    { id: 'school-teaching', name: 'Enable Teaching & Learning', subdomains: [
+        { id: 'st-leadership', name: 'Instructional Leadership', levels: ['Assess current teacher (and self) AI knowledge and comfort levels, along with early AI adopters that can serve as AI Readiness champions to identify AI Readiness instructional priorities (e.g., AI tool use, rethinking assignments in the age of AI, integrating AI literacy skill-building to core curriculum), aligned to school-specific AI Readiness goals','Establish and implement collaborative, structured, and connected opportunities for teachers to develop AI Readiness skills aligned to school-specific AI Readiness goals (e.g., school-wide PLC on AI tool use for a specific teaching task, with examples, opportunities for feedback and revision, and reviewing student work)','Integrate ongoing, job-embedded professional learning on AI Readiness within teacher development systems. Use instructional data, feedback from teachers, and responsiveness to rapidly changing landscape to continually refine teacher development and leadership for AI Readiness']},
+        { id: 'st-coaching', name: 'Observation & Coaching', levels: ['Conduct observations to identify levels of AI Readiness happening in classrooms','Incorporate AI Readiness considerations into informal classroom observations and 1:1 coaching, aligned to school-specific AI Readiness goals and instructional priorities','Establish ongoing, differentiated coaching cycles that use multiple data sources to deepen individual teachers\' AI Readiness and instructional effectiveness']},
+        { id: 'st-materials', name: 'Instructional Materials', levels: ['With department or instructional leaders, identify key criteria to evaluate existing and new instructional materials for supporting student AI Readiness and content outcomes, aligning to vision of AI use in instruction','Lead instructional leadership team in evaluating a prioritized set of instructional materials for AI Readiness; share recommendations for changes to curriculum to meet student AI Readiness and content outcomes','Support instructional teams in implementing updated curriculum aligned to student AI Readiness and content outcomes; establish ongoing analysis of efficacy of materials through student and teaching data']},
+        { id: 'st-tools', name: 'Tool Selection for Instruction', levels: ['Define what a strong instructional AI tool is, anchored in student learning and AI Readiness outcomes','Implement criteria for instructional AI tool selection to evaluate and streamline existing district-approved instructional tools; ensure alignment to overall district tech procurement processes','Evolve criteria for instructional tool selection and apply to existing and new tool selection processes']}
+    ]}
 ];
 
-function getRubric(type) {
-    return type === 'school' ? SCHOOL_RUBRIC : DISTRICT_RUBRIC;
-}
+function getRubric(type) { return type === 'school' ? SCHOOL_RUBRIC : DISTRICT_RUBRIC; }
 
 // ══════════════════════════════════════════════════
 // STATE
 // ══════════════════════════════════════════════════
 const PM_LIST = ['LeNard', 'Ashley', 'Lindsay', 'Na', 'Kristen', 'Emma (Admin)'];
-
 let currentPM = null;
 let currentPartnerId = null;
-let partners = [];      // [{id, name, type, pm, state, startDate, notes, status}]
-let assessments = {};   // {partnerId: {initial: {ratings:{},notes}, final: {ratings:{},notes}}}
-let goals = {};         // {partnerId: [{id, domain, subdomain, currentLevel, targetLevel, notes}]}
-let checkins = {};      // {partnerId: [{id, date, notes, ratings:{}}]}
+let partners = [];
+let assessments = {};
+let goals = {};
+let checkins = {};
 
 // ══════════════════════════════════════════════════
 // LOCAL STORAGE
@@ -1058,49 +544,99 @@ function persist() {
 }
 
 function loadFromStorage() {
-    partners = JSON.parse(localStorage.getItem('partnerTool_partners') || '[]');
+    partners    = JSON.parse(localStorage.getItem('partnerTool_partners')    || '[]');
     assessments = JSON.parse(localStorage.getItem('partnerTool_assessments') || '{}');
-    goals = JSON.parse(localStorage.getItem('partnerTool_goals') || '{}');
-    checkins = JSON.parse(localStorage.getItem('partnerTool_checkins') || '{}');
-    currentPM = localStorage.getItem('partnerTool_pm') || null;
+    goals       = JSON.parse(localStorage.getItem('partnerTool_goals')       || '{}');
+    checkins    = JSON.parse(localStorage.getItem('partnerTool_checkins')    || '{}');
+    currentPM   = localStorage.getItem('partnerTool_pm') || null;
 }
 
-function genId() {
-    return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+function genId() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+
+// ══════════════════════════════════════════════════
+// AIRTABLE SYNC
+// ══════════════════════════════════════════════════
+
+// Maps app subdomain IDs → Airtable field IDs in the Assessments table
+const SD_TO_FIELD = {
+    // District
+    'vision-student':           'fld9qCXakt8uAtfIU',
+    'vision-system':            'fldKjeMVUyfhPtZVl',
+    'vision-instruction':       'fldJWbeV63O8FbxgV',
+    'strategy-set':             'fld7OWc2VDu90lNTk',
+    'strategy-change':          'fldNWl5TWTnCutadh',
+    'stakeholders-context':     'fld3tyY5eivMdvIlO',
+    'stakeholders-engage':      'fldzJ34FDRFCR1iZg',
+    'stakeholders-communicate': 'fldEaCbJIXFop3oOK',
+    'policy-guardrails':        'fldwvIDtbTV0aKEqo',
+    'policy-processes':         'fldxDgkv9JeorGaTi',
+    'teaching-capacity':        'fldjZz3t4c0aD3Eeb',
+    'teaching-materials':       'fldWAq5qi59dOzW7D',
+    'teaching-dept':            'fldSda1Is4V2hxlik',
+    'teaching-tools':           'fldQAzaCQVcQ1DWgf',
+    // School
+    'sv-student':               'fldgSprjbEPoULtZF',
+    'sv-system':                'fldfF7Gorr8mYNkfp',
+    'sv-instruction':           'fldE0gYYP5AtGPRck',
+    'ss-context':               'fldcA8YWywiwviLTc',
+    'ss-communicate':           'fld1ddqXK7fa393P2',
+    'sp-guardrails':            'fldwkfL7lU5Uf3dFx',
+    'sp-processes':             'fldQMmABtqbEjOUZz',
+    'st-leadership':            'fldXgUW1v4EdK3Its',
+    'st-coaching':              'fldhtEVWL3LvPiHEg',
+    'st-materials':             'fldvuHbbTgXyVKxmC',
+    'st-tools':                 'fldZ5dgPA3Sh8zega',
+};
+
+async function syncToAirtable(assessType) {
+    const p = partners.find(x => x.id === currentPartnerId);
+    if (!p) return;
+    const ratings = assessments[currentPartnerId]?.[assessType]?.ratings || {};
+    const scores = {};
+    for (const [sdId] of Object.entries(SD_TO_FIELD)) {
+        if (ratings[sdId] !== undefined) scores[sdId] = ratings[sdId];
+    }
+    const payload = {
+        partnerName:    p.name,
+        assessmentType: assessType === 'initial' ? 'Pre-Assessment' : 'Final Assessment',
+        status:         'Complete',
+        notes:          assessType === 'final'
+                            ? (document.getElementById('finalNotes')?.value || '')
+                            : (p.notes || ''),
+        ...scores,
+    };
+    try {
+        const res = await fetch('/api/sync-to-airtable', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(payload),
+        });
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || 'Sync failed');
+        console.log('✓ Synced to Airtable:', json.recordId);
+    } catch (err) {
+        console.warn('Airtable sync failed (data still saved locally):', err.message);
+    }
 }
 
 // ══════════════════════════════════════════════════
-// LOGIN SCREEN
+// LOGIN
 // ══════════════════════════════════════════════════
 let selectedPM = '';
 function renderPMGrid() {
-    const grid = document.getElementById('pmGrid');
-    grid.innerHTML = PM_LIST.map(name => `
+    document.getElementById('pmGrid').innerHTML = PM_LIST.map(name => `
         <div class="pm-option ${selectedPM === name ? 'selected' : ''}" onclick="selectPM('${name}')">
-            <div class="pm-icon">👤</div>
-            ${name}
-        </div>
-    `).join('');
+            <div class="pm-icon">👤</div>${name}
+        </div>`).join('');
 }
 
-function selectPM(name) {
-    selectedPM = name;
-    document.getElementById('pmCustomName').value = '';
-    renderPMGrid();
-}
-
-function onCustomName(val) {
-    selectedPM = val.trim() ? val.trim() : '';
-    renderPMGrid();
-}
+function selectPM(name) { selectedPM = name; document.getElementById('pmCustomName').value = ''; renderPMGrid(); }
+function onCustomName(val) { selectedPM = val.trim() || ''; renderPMGrid(); }
 
 function loginPM() {
     const custom = document.getElementById('pmCustomName').value.trim();
     const pm = custom || selectedPM;
-    if (!pm) {
-        showAlert('loginAlert', 'Please select or enter your name.', 'error');
-        return;
-    }
+    if (!pm) { showAlert('loginAlert', 'Please select or enter your name.', 'error'); return; }
     currentPM = pm;
     localStorage.setItem('partnerTool_pm', pm);
     updateHeaderPM();
@@ -1108,8 +644,7 @@ function loginPM() {
 }
 
 function logout() {
-    currentPM = null;
-    selectedPM = '';
+    currentPM = null; selectedPM = '';
     localStorage.removeItem('partnerTool_pm');
     updateHeaderPM();
     showScreen('screenLogin');
@@ -1118,15 +653,9 @@ function logout() {
 
 function updateHeaderPM() {
     const badge = document.getElementById('pmBadge');
-    const btn = document.getElementById('logoutBtn');
-    if (currentPM) {
-        badge.textContent = currentPM;
-        badge.classList.add('visible');
-        btn.classList.add('visible');
-    } else {
-        badge.classList.remove('visible');
-        btn.classList.remove('visible');
-    }
+    const btn   = document.getElementById('logoutBtn');
+    if (currentPM) { badge.textContent = currentPM; badge.classList.add('visible'); btn.classList.add('visible'); }
+    else { badge.classList.remove('visible'); btn.classList.remove('visible'); }
 }
 
 // ══════════════════════════════════════════════════
@@ -1135,39 +664,28 @@ function updateHeaderPM() {
 function showDashboard() {
     currentPartnerId = null;
     showScreen('screenDashboard');
-
-    const isAdmin = currentPM && currentPM.toLowerCase().includes('emma');
+    const isAdmin  = currentPM && currentPM.toLowerCase().includes('emma');
     const myPartners = isAdmin ? partners : partners.filter(p => p.pm === currentPM);
-
-    document.getElementById('dashTitle').textContent = isAdmin ? 'All Partners (Admin View)' : `${currentPM}'s Partners`;
+    document.getElementById('dashTitle').textContent    = isAdmin ? 'All Partners (Admin View)' : `${currentPM}'s Partners`;
     document.getElementById('dashSubtitle').textContent = isAdmin
         ? `Showing all ${myPartners.length} partners across all PMs`
         : `${myPartners.length} partner${myPartners.length !== 1 ? 's' : ''} assigned to you`;
-
-    // Stats
-    const total = myPartners.length;
+    const total       = myPartners.length;
     const withInitial = myPartners.filter(p => assessments[p.id]?.initial?.saved).length;
-    const withGoals = myPartners.filter(p => (goals[p.id]?.length || 0) > 0).length;
-    const withFinal = myPartners.filter(p => assessments[p.id]?.final?.saved).length;
+    const withGoals   = myPartners.filter(p => (goals[p.id]?.length || 0) > 0).length;
+    const withFinal   = myPartners.filter(p => assessments[p.id]?.final?.saved).length;
     document.getElementById('statsRow').innerHTML = `
         <div class="stat-card"><div class="stat-label">Total Partners</div><div class="stat-value">${total}</div></div>
         <div class="stat-card"><div class="stat-label">Initial Assessments</div><div class="stat-value">${withInitial}</div></div>
         <div class="stat-card"><div class="stat-label">With Goals Set</div><div class="stat-value">${withGoals}</div></div>
-        <div class="stat-card"><div class="stat-label">Final Assessments</div><div class="stat-value">${withFinal}</div></div>
-    `;
-
-    // Partners list
+        <div class="stat-card"><div class="stat-label">Final Assessments</div><div class="stat-value">${withFinal}</div></div>`;
     const list = document.getElementById('partnersList');
-    if (myPartners.length === 0) {
-        list.innerHTML = `<div class="empty-state">No partners yet. Click <strong>Add Partner</strong> to get started.</div>`;
-        return;
-    }
+    if (!myPartners.length) { list.innerHTML = `<div class="empty-state">No partners yet. Click <strong>Add Partner</strong> to get started.</div>`; return; }
     list.innerHTML = myPartners.map(p => {
-        const status = getPartnerStatus(p.id);
-        const score = getOverallScore(p.id, 'initial');
+        const status   = getPartnerStatus(p.id);
+        const score    = getOverallScore(p.id, 'initial');
         const initials = p.name.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
-        return `
-        <div class="partner-card" onclick="openPartner('${p.id}')">
+        return `<div class="partner-card" onclick="openPartner('${p.id}')">
             <div class="partner-card-left">
                 <div class="partner-avatar">${initials}</div>
                 <div>
@@ -1190,14 +708,12 @@ function getPartnerStatus(id) {
     if (assessments[id]?.initial?.saved) return 'Goals Needed';
     return 'Not Started';
 }
-
 function statusClass(s) {
     if (s === 'Complete') return 'status-complete';
     if (s === 'In Progress') return 'status-active';
     if (s === 'Goals Needed') return 'status-initial';
     return 'status-new';
 }
-
 function getOverallScore(partnerId, type) {
     const a = assessments[partnerId]?.[type];
     if (!a?.ratings) return 0;
@@ -1217,21 +733,15 @@ function showAddPartner() {
 function saveNewPartner() {
     const name = document.getElementById('newPartnerName').value.trim();
     const type = document.getElementById('newPartnerType').value;
-    if (!name || !type) {
-        showAlert('addPartnerAlert', 'Partner name and type are required.', 'error');
-        return;
-    }
+    if (!name || !type) { showAlert('addPartnerAlert', 'Partner name and type are required.', 'error'); return; }
     const id = genId();
-    const p = {
-        id, name, type,
-        pm: currentPM,
-        state: document.getElementById('newPartnerState').value.trim(),
+    const p  = { id, name, type, pm: currentPM,
+        state:     document.getElementById('newPartnerState').value.trim(),
         startDate: document.getElementById('newPartnerStart').value,
-        notes: document.getElementById('newPartnerNotes').value.trim()
-    };
+        notes:     document.getElementById('newPartnerNotes').value.trim() };
     partners.push(p);
     assessments[id] = { initial: { ratings: {}, saved: false }, final: { ratings: {}, saved: false } };
-    goals[id] = [];
+    goals[id]    = [];
     checkins[id] = [];
     persist();
     openPartner(id);
@@ -1250,15 +760,11 @@ function openPartner(id) {
         ${p.state ? `<span>${p.state}</span>` : ''}
         <span>PM: ${p.pm}</span>
         ${p.startDate ? `<span>Started: ${p.startDate}</span>` : ''}
-        <span class="status-pill ${statusClass(getPartnerStatus(id))}">${getPartnerStatus(id)}</span>
-    `;
-    // Populate partner switcher dropdown
-    const isAdmin = currentPM && currentPM.toLowerCase().includes('emma');
+        <span class="status-pill ${statusClass(getPartnerStatus(id))}">${getPartnerStatus(id)}</span>`;
+    const isAdmin    = currentPM && currentPM.toLowerCase().includes('emma');
     const myPartners = isAdmin ? partners : partners.filter(x => x.pm === currentPM);
-    const switcher = document.getElementById('partnerSwitcher');
-    switcher.innerHTML = myPartners.map(x =>
-        `<option value="${x.id}" ${x.id === id ? 'selected' : ''}>${x.name}</option>`
-    ).join('');
+    document.getElementById('partnerSwitcher').innerHTML = myPartners.map(x =>
+        `<option value="${x.id}" ${x.id === id ? 'selected' : ''}>${x.name}</option>`).join('');
     showScreen('screenPartner');
     switchTab('initial', document.querySelector('.tab-btn'));
     renderInitialRubric();
@@ -1266,9 +772,7 @@ function openPartner(id) {
     renderCheckins();
 }
 
-function switchPartner(id) {
-    if (id && id !== currentPartnerId) openPartner(id);
-}
+function switchPartner(id) { if (id && id !== currentPartnerId) openPartner(id); }
 
 // ══════════════════════════════════════════════════
 // TABS
@@ -1278,34 +782,32 @@ function switchTab(tab, btn) {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     if (btn) btn.classList.add('active');
     else {
-        const btns = document.querySelectorAll('.tab-btn');
+        const btns   = document.querySelectorAll('.tab-btn');
         const tabMap = ['initial', 'goals', 'progress', 'final'];
-        const idx = tabMap.indexOf(tab);
+        const idx    = tabMap.indexOf(tab);
         if (idx >= 0) btns[idx]?.classList.add('active');
     }
     document.getElementById('tab-' + tab)?.classList.add('active');
-    if (tab === 'goals') { renderGoals(); updateGoalDomains(); }
+    if (tab === 'goals')    { renderGoals(); updateGoalDomains(); }
     if (tab === 'progress') renderCheckins();
-    if (tab === 'final') { renderFinalRubric(); renderFinalComparison(); }
+    if (tab === 'final')    { renderFinalRubric(); renderFinalComparison(); }
 }
 
-// ══════════��═══════════════════════════════════════
+// ══════════════════════════════════════════════════
 // RUBRIC RENDERING
 // ══════════════════════════════════════════════════
 function renderRubric(containerId, summaryId, assessType) {
     const p = partners.find(x => x.id === currentPartnerId);
     if (!p) return;
-    const rubric = getRubric(p.type);
+    const rubric  = getRubric(p.type);
     const ratings = assessments[currentPartnerId][assessType]?.ratings || {};
-
-    // Summary strip
     const summary = document.getElementById(summaryId);
     if (summary) {
         summary.innerHTML = rubric.map(d => {
             const rated = d.subdomains.filter(s => ratings[s.id] !== undefined);
-            const avg = rated.length ? rated.reduce((a, s) => a + ratings[s.id], 0) / rated.length : null;
+            const avg   = rated.length ? rated.reduce((a, s) => a + ratings[s.id], 0) / rated.length : null;
             const fillClass = avg !== null ? LEVEL_FILL[Math.round(avg)] : 'l0';
-            const pct = avg !== null ? (avg / 3) * 100 : 0;
+            const pct   = avg !== null ? (avg / 3) * 100 : 0;
             return `<div class="summary-card" onclick="scrollToDomain('${d.id}', '${assessType}')">
                 <div class="sc-name">${d.name.slice(0, 30)}${d.name.length > 30 ? '…' : ''}</div>
                 <div class="sc-score">${avg !== null ? avg.toFixed(1) : '—'}</div>
@@ -1313,11 +815,9 @@ function renderRubric(containerId, summaryId, assessType) {
             </div>`;
         }).join('');
     }
-
-    // Rubric domains
     document.getElementById(containerId).innerHTML = rubric.map((d, di) => {
         const rated = d.subdomains.filter(s => ratings[s.id] !== undefined);
-        const avg = rated.length ? (rated.reduce((a, s) => a + ratings[s.id], 0) / rated.length).toFixed(1) : '—';
+        const avg   = rated.length ? (rated.reduce((a, s) => a + ratings[s.id], 0) / rated.length).toFixed(1) : '—';
         return `<div class="domain-block" id="domain-${assessType}-${d.id}">
             <div class="domain-header" onclick="toggleDomain('${assessType}-${d.id}')">
                 <div class="domain-title">
@@ -1337,9 +837,9 @@ function renderRubric(containerId, summaryId, assessType) {
 }
 
 function renderSubdomain(sd, currentLevel, assessType) {
-    const rated = currentLevel !== undefined;
+    const rated     = currentLevel !== undefined;
     const chipClass = rated ? LEVEL_COLORS[currentLevel] : 'lc-unrated';
-    const chipText = rated ? `Level ${currentLevel} — ${LEVEL_NAMES[currentLevel]}` : 'Not yet rated';
+    const chipText  = rated ? `Level ${currentLevel} — ${LEVEL_NAMES[currentLevel]}` : 'Not yet rated';
     const levelOptions = [0, 1, 2, 3].map(lv => `
         <div class="level-option ${currentLevel === lv ? 'selected' : ''}" onclick="setRating('${sd.id}', ${lv}, '${assessType}')">
             <div class="check-mark"><svg viewBox="0 0 24 24" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
@@ -1362,14 +862,9 @@ function renderSubdomain(sd, currentLevel, assessType) {
 }
 
 function renderInitialRubric() { renderRubric('initialRubric', 'initialSummary', 'initial'); }
-function renderFinalRubric() { renderRubric('finalRubric', 'finalSummary', 'final'); }
-
-function toggleDomain(id) {
-    document.getElementById('domain-' + id)?.classList.toggle('expanded');
-}
-function toggleSubdomain(id) {
-    document.getElementById('sd-' + id)?.classList.toggle('expanded');
-}
+function renderFinalRubric()   { renderRubric('finalRubric',   'finalSummary',   'final');   }
+function toggleDomain(id)    { document.getElementById('domain-' + id)?.classList.toggle('expanded'); }
+function toggleSubdomain(id) { document.getElementById('sd-' + id)?.classList.toggle('expanded'); }
 function scrollToDomain(domainId, assessType) {
     const el = document.getElementById(`domain-${assessType}-${domainId}`);
     if (el) { el.classList.add('expanded'); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
@@ -1379,28 +874,22 @@ function setRating(subdomainId, level, assessType) {
     if (!assessments[currentPartnerId]) assessments[currentPartnerId] = {};
     if (!assessments[currentPartnerId][assessType]) assessments[currentPartnerId][assessType] = { ratings: {}, saved: false };
     const current = assessments[currentPartnerId][assessType].ratings[subdomainId];
-    if (current === level) {
-        delete assessments[currentPartnerId][assessType].ratings[subdomainId];
-    } else {
-        assessments[currentPartnerId][assessType].ratings[subdomainId] = level;
-    }
+    if (current === level) delete assessments[currentPartnerId][assessType].ratings[subdomainId];
+    else assessments[currentPartnerId][assessType].ratings[subdomainId] = level;
     persist();
     if (assessType === 'initial') renderInitialRubric();
     else renderFinalRubric();
-    // Re-expand the subdomain
-    setTimeout(() => {
-        document.getElementById(`sd-${assessType}-${subdomainId}`)?.classList.add('expanded');
-    }, 10);
+    setTimeout(() => { document.getElementById(`sd-${assessType}-${subdomainId}`)?.classList.add('expanded'); }, 10);
 }
 
+// ── SAVE ASSESSMENT (syncs to Airtable) ──────────────────────────────────────
 function saveAssessment(type) {
     if (!assessments[currentPartnerId]) assessments[currentPartnerId] = {};
     if (!assessments[currentPartnerId][type]) assessments[currentPartnerId][type] = { ratings: {}, saved: false };
     assessments[currentPartnerId][type].saved = true;
-    if (type === 'final') {
-        assessments[currentPartnerId].final.notes = document.getElementById('finalNotes').value;
-    }
+    if (type === 'final') assessments[currentPartnerId].final.notes = document.getElementById('finalNotes').value;
     persist();
+    syncToAirtable(type); // non-blocking — data is already saved locally
     const ind = document.getElementById(type + 'SaveIndicator');
     if (ind) { ind.classList.add('visible'); setTimeout(() => ind.classList.remove('visible'), 3000); }
 }
@@ -1412,8 +901,8 @@ function updateGoalDomains() {
     const p = partners.find(x => x.id === currentPartnerId);
     if (!p) return;
     const rubric = getRubric(p.type);
-    const sel = document.getElementById('goalDomain');
-    sel.innerHTML = '<option value="">Select domain…</option>' + rubric.map(d => `<option value="${d.id}">${d.name}</option>`).join('');
+    document.getElementById('goalDomain').innerHTML =
+        '<option value="">Select domain…</option>' + rubric.map(d => `<option value="${d.id}">${d.name}</option>`).join('');
     document.getElementById('goalSubdomain').innerHTML = '<option value="">Entire Domain</option>';
 }
 
@@ -1421,39 +910,29 @@ function updateGoalSubdomains() {
     const p = partners.find(x => x.id === currentPartnerId);
     if (!p) return;
     const rubric = getRubric(p.type);
-    const domId = document.getElementById('goalDomain').value;
+    const domId  = document.getElementById('goalDomain').value;
     const domain = rubric.find(d => d.id === domId);
-    const sel = document.getElementById('goalSubdomain');
+    const sel    = document.getElementById('goalSubdomain');
     sel.innerHTML = '<option value="">Entire Domain</option>';
-    if (domain) {
-        domain.subdomains.forEach(sd => {
-            sel.innerHTML += `<option value="${sd.id}">${sd.name}</option>`;
-        });
-    }
-    // Pre-fill current level from initial assessment
-    const sdSel = document.getElementById('goalSubdomain');
-    sdSel.onchange = () => {
-        const sdId = sdSel.value;
-        if (sdId) {
-            const lvl = assessments[currentPartnerId]?.initial?.ratings?.[sdId];
-            if (lvl !== undefined) document.getElementById('goalCurrentLevel').value = lvl;
-        }
+    if (domain) domain.subdomains.forEach(sd => { sel.innerHTML += `<option value="${sd.id}">${sd.name}</option>`; });
+    sel.onchange = () => {
+        const sdId = sel.value;
+        if (sdId) { const lvl = assessments[currentPartnerId]?.initial?.ratings?.[sdId]; if (lvl !== undefined) document.getElementById('goalCurrentLevel').value = lvl; }
     };
 }
 
 function addGoal() {
-    const domain = document.getElementById('goalDomain').value;
-    const subdomain = document.getElementById('goalSubdomain').value;
+    const domain       = document.getElementById('goalDomain').value;
+    const subdomain    = document.getElementById('goalSubdomain').value;
     const currentLevel = parseInt(document.getElementById('goalCurrentLevel').value);
-    const targetLevel = parseInt(document.getElementById('goalTargetLevel').value);
-    const notes = document.getElementById('goalNotes').value.trim();
+    const targetLevel  = parseInt(document.getElementById('goalTargetLevel').value);
+    const notes        = document.getElementById('goalNotes').value.trim();
     if (!domain) { alert('Please select a domain.'); return; }
     if (targetLevel <= currentLevel) { alert('Target level should be higher than current level.'); return; }
     if (!goals[currentPartnerId]) goals[currentPartnerId] = [];
     goals[currentPartnerId].push({ id: genId(), domain, subdomain, currentLevel, targetLevel, notes });
     persist();
     renderGoals();
-    // Reset form
     document.getElementById('goalDomain').value = '';
     document.getElementById('goalSubdomain').innerHTML = '<option value="">Entire Domain</option>';
     document.getElementById('goalNotes').value = '';
@@ -1462,24 +941,20 @@ function addGoal() {
 function deleteGoal(goalId) {
     if (!confirm('Remove this goal?')) return;
     goals[currentPartnerId] = goals[currentPartnerId].filter(g => g.id !== goalId);
-    persist();
-    renderGoals();
+    persist(); renderGoals();
 }
 
 function renderGoals() {
     const p = partners.find(x => x.id === currentPartnerId);
     if (!p) return;
-    const rubric = getRubric(p.type);
-    const list = goals[currentPartnerId] || [];
+    const rubric    = getRubric(p.type);
+    const list      = goals[currentPartnerId] || [];
     const container = document.getElementById('goalsList');
     if (!container) return;
-    if (!list.length) {
-        container.innerHTML = `<div class="alert alert-info">No goals set yet. Use the form below to add goals based on the initial assessment.</div>`;
-        return;
-    }
+    if (!list.length) { container.innerHTML = `<div class="alert alert-info">No goals set yet. Use the form below to add goals based on the initial assessment.</div>`; return; }
     container.innerHTML = list.map(g => {
         const domain = rubric.find(d => d.id === g.domain);
-        const sd = domain?.subdomains.find(s => s.id === g.subdomain);
+        const sd     = domain?.subdomains.find(s => s.id === g.subdomain);
         return `<div class="goal-card">
             <button class="delete-btn" onclick="deleteGoal('${g.id}')">✕</button>
             <div class="goal-domain">${domain?.name || g.domain}</div>
@@ -1498,13 +973,12 @@ function renderGoals() {
 // PROGRESS CHECK-INS
 // ══════════════════════════════════════════════════
 function startCheckin() {
-    document.getElementById('checkinDate').value = new Date().toISOString().slice(0, 10);
+    document.getElementById('checkinDate').value  = new Date().toISOString().slice(0, 10);
     document.getElementById('checkinNotes').value = '';
     const p = partners.find(x => x.id === currentPartnerId);
     if (!p) return;
-    const rubric = getRubric(p.type);
+    const rubric     = getRubric(p.type);
     const prevRatings = getLatestRatings();
-    // Render compact check-in rubric (domain headers + subdomain dropdowns)
     document.getElementById('checkinRubric').innerHTML = rubric.map(d => `
         <div style="margin-bottom:1.25rem;">
             <div style="font-weight:600;font-size:0.88rem;color:var(--primary);margin-bottom:0.5rem;">${d.name}</div>
@@ -1531,32 +1005,23 @@ function getLatestRatings() {
 }
 
 function saveCheckin() {
-    const date = document.getElementById('checkinDate').value;
-    const notes = document.getElementById('checkinNotes').value.trim();
+    const date    = document.getElementById('checkinDate').value;
+    const notes   = document.getElementById('checkinNotes').value.trim();
     const selects = document.querySelectorAll('#checkinRubric select[data-sdid]');
     const ratings = {};
-    selects.forEach(sel => {
-        if (sel.value !== '') ratings[sel.dataset.sdid] = parseInt(sel.value);
-    });
+    selects.forEach(sel => { if (sel.value !== '') ratings[sel.dataset.sdid] = parseInt(sel.value); });
     if (!checkins[currentPartnerId]) checkins[currentPartnerId] = [];
     checkins[currentPartnerId].push({ id: genId(), date, notes, ratings });
-    persist();
-    cancelCheckin();
-    renderCheckins();
+    persist(); cancelCheckin(); renderCheckins();
 }
 
-function cancelCheckin() {
-    document.getElementById('checkinForm').style.display = 'none';
-}
+function cancelCheckin() { document.getElementById('checkinForm').style.display = 'none'; }
 
 function renderCheckins() {
-    const list = checkins[currentPartnerId] || [];
+    const list      = checkins[currentPartnerId] || [];
     const container = document.getElementById('checkinsList');
     if (!container) return;
-    if (!list.length) {
-        container.innerHTML = `<div class="alert alert-info" style="margin-bottom:1rem;">No check-ins yet. Record your first check-in to track progress over time.</div>`;
-        return;
-    }
+    if (!list.length) { container.innerHTML = `<div class="alert alert-info" style="margin-bottom:1rem;">No check-ins yet. Record your first check-in to track progress over time.</div>`; return; }
     container.innerHTML = list.map((ci, i) => {
         const changed = Object.entries(ci.ratings || {}).filter(([,v]) => v !== undefined);
         return `<div class="checkin-card">
@@ -1566,9 +1031,9 @@ function renderCheckins() {
             </div>
             <div class="checkin-body">
                 ${ci.notes ? `<p style="font-size:0.88rem;margin-bottom:0.75rem;color:var(--gray-700);">${ci.notes}</p>` : ''}
-                ${changed.length ? `<div style="font-size:0.82rem;color:var(--gray-500);">
-                    Updated ratings: ${changed.map(([id, v]) => `<strong>${id}</strong> → L${v}`).join(', ')}
-                </div>` : `<div style="font-size:0.82rem;color:var(--gray-400);">No rating changes recorded.</div>`}
+                ${changed.length
+                    ? `<div style="font-size:0.82rem;color:var(--gray-500);">Updated ratings: ${changed.map(([id, v]) => `<strong>${id}</strong> → L${v}`).join(', ')}</div>`
+                    : `<div style="font-size:0.82rem;color:var(--gray-400);">No rating changes recorded.</div>`}
                 <button class="delete-btn" style="position:relative;top:0;right:0;margin-top:0.5rem;" onclick="deleteCheckin('${ci.id}')">Remove ✕</button>
             </div>
         </div>`;
@@ -1578,8 +1043,7 @@ function renderCheckins() {
 function deleteCheckin(id) {
     if (!confirm('Remove this check-in?')) return;
     checkins[currentPartnerId] = checkins[currentPartnerId].filter(c => c.id !== id);
-    persist();
-    renderCheckins();
+    persist(); renderCheckins();
 }
 
 // ══════════════════════════════════════════════════
@@ -1588,20 +1052,12 @@ function deleteCheckin(id) {
 function renderFinalComparison() {
     const p = partners.find(x => x.id === currentPartnerId);
     if (!p) return;
-    const rubric = getRubric(p.type);
+    const rubric      = getRubric(p.type);
     const initRatings = assessments[currentPartnerId]?.initial?.ratings || {};
-    const finRatings = assessments[currentPartnerId]?.final?.ratings || {};
-    const hasInitial = Object.keys(initRatings).length > 0;
-    const hasFinal = Object.keys(finRatings).length > 0;
-    const container = document.getElementById('finalComparison');
-    if (!hasInitial) {
-        container.innerHTML = `<div class="alert alert-info">Complete the Initial Assessment first to see a comparison here.</div>`;
-        return;
-    }
-    if (!hasFinal) {
-        container.innerHTML = `<div class="alert alert-info">Complete the Final Assessment below to generate a progress comparison.</div>`;
-        return;
-    }
+    const finRatings  = assessments[currentPartnerId]?.final?.ratings   || {};
+    const container   = document.getElementById('finalComparison');
+    if (!Object.keys(initRatings).length) { container.innerHTML = `<div class="alert alert-info">Complete the Initial Assessment first to see a comparison here.</div>`; return; }
+    if (!Object.keys(finRatings).length)  { container.innerHTML = `<div class="alert alert-info">Complete the Final Assessment below to generate a progress comparison.</div>`; return; }
     let html = `<div class="section-title">Progress Overview: Initial → Final</div>
     <div class="comparison-grid">
         <div class="comp-header">Sub-domain</div>
@@ -1611,17 +1067,16 @@ function renderFinalComparison() {
         html += `<div class="comp-cell" style="grid-column:1/-1;"><div class="progress-section-head">${d.name}</div></div>`;
         d.subdomains.forEach(sd => {
             const init = initRatings[sd.id];
-            const fin = finRatings[sd.id];
-            const up = fin !== undefined && init !== undefined && fin > init;
+            const fin  = finRatings[sd.id];
+            const up   = fin !== undefined && init !== undefined && fin > init;
             html += `
                 <div class="comp-cell subdomain-label">${sd.name}</div>
                 <div class="comp-cell level-val">${init !== undefined ? `<span class="level-chip lc-${init}">L${init}</span>` : '—'}</div>
-                <div class="comp-cell level-val">${fin !== undefined ? `<span class="level-chip lc-${fin} ${up ? 'progress-up' : ''}">${up ? '▲ ' : ''}L${fin}</span>` : '—'}</div>`;
+                <div class="comp-cell level-val">${fin  !== undefined ? `<span class="level-chip lc-${fin} ${up ? 'progress-up' : ''}">${up ? '▲ ' : ''}L${fin}</span>` : '—'}</div>`;
         });
     });
     html += '</div>';
     container.innerHTML = html;
-    // Load saved notes
     document.getElementById('finalNotes').value = assessments[currentPartnerId]?.final?.notes || '';
 }
 
@@ -1645,13 +1100,8 @@ function showAlert(containerId, msg, type) {
 // ══════════════════════════════════════════════════
 loadFromStorage();
 renderPMGrid();
-
-if (currentPM) {
-    updateHeaderPM();
-    showDashboard();
-} else {
-    showScreen('screenLogin');
-}
+if (currentPM) { updateHeaderPM(); showDashboard(); }
+else { showScreen('screenLogin'); }
 </script>
 </body>
 </html>
