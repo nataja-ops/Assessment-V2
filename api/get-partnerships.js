@@ -1,15 +1,3 @@
-// ============================================================
-// FILE: api/get-partnerships.js
-//
-// HOW TO ADD:
-// 1. In your GitHub repo click Add file → Create new file
-// 2. Type  api/get-partnerships.js  as the filename
-// 3. Paste this entire file → Commit directly to main
-//
-// WHAT IT DOES:
-// Fetches active partnerships from Airtable Opportunities by Pipeline
-// and returns them as a list for the Add Partner dropdown.
-// ============================================================
 
 const BASE_ID        = "apptKJnbKllpLEA8u";
 const PIPELINE_TABLE = "tblfdNFG4TAPFxWbf"; // Opportunities by Pipeline
