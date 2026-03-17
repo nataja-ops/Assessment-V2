@@ -1,64 +1,81 @@
+// ============================================================
+// FILE: api/get-partnerships.js
+//
+// HOW TO ADD:
+// 1. In your GitHub repo click Add file → Create new file
+// 2. Type  api/get-partnerships.js  as the filename
+// 3. Paste this entire file → Commit directly to main
+//
+// WHAT IT DOES:
+// Fetches active partnerships from Airtable Opportunities by Pipeline
+// and returns them as a list for the Add Partner dropdown.
+// ============================================================
 
-
-const BASE_ID      = "apptKJnbKllpLEA8u";
-const CHECKIN_TABLE = "tblcod2MjY98TCSmO"; // Partner Progress Reporting
+const BASE_ID        = "apptKJnbKllpLEA8u";
+const PIPELINE_TABLE = "tblfdNFG4TAPFxWbf"; // Opportunities by Pipeline
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
+  if (req.method !== "GET") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
   const apiKey = process.env.AIRTABLE_API_KEY;
-  if (!apiKey) return res.status(500).json({ error: "Airtable API key not configured" });
+  if (!apiKey) {
+    return res.status(500).json({ error: "Airtable API key not configured" });
+  }
 
   try {
-    const { partnershipRecordId, date, notes, reportedBy, ratings } = req.body;
+    const partnerships = [];
+    let offset = null;
 
-    if (!partnershipRecordId) {
-      return res.status(400).json({ error: "partnershipRecordId is required" });
-    }
+    // Airtable paginates at 100 records — loop until all pages are fetched
+    do {
+      const params = new URLSearchParams({
+        // Only pull the fields we need for the dropdown
+        "fields[]":              "fldSHTsSpveA7cHFs", // Partnership (formula: "YYYY | Name | Status")
+        "fields[]":              "fldv2qrLtSOEeWY6I", // Accounts (Synced) — for the partner name
+        "fields[]":              "fldEYuhduLRkJeQ5e", // Pipeline Status
+        "fields[]":              "fld0ixuKHZrSwnzZV", // Partner Type (District/School)
+        // Only include active/relevant partnerships — adjust these as needed
+        "filterByFormula":       `AND({Pipeline Status} != "Inactive", {Pipeline Status} != "Rejected", {Pipeline Status} != "On Ice")`,
+        "sort[0][field]":        "fldSHTsSpveA7cHFs",
+        "sort[0][direction]":    "asc",
+      });
 
-    // Build a readable summary of any rating changes for the notes field
-    const ratingLines = Object.entries(ratings || {})
-      .map(([subdomain, level]) => `• ${subdomain}: Level ${level}`)
-      .join('\n');
+      if (offset) params.set("offset", offset);
 
-    const progressNotes = [
-      notes,
-      ratingLines ? `\nRating updates:\n${ratingLines}` : ''
-    ].filter(Boolean).join('\n').trim();
+      const response = await fetch(
+        `https://api.airtable.com/v0/${BASE_ID}/${PIPELINE_TABLE}?${params}`,
+        { headers: { "Authorization": `Bearer ${apiKey}` } }
+      );
 
-    const fields = {
-      "fldYhMGzmSxGsd4cL": [partnershipRecordId],  // Partnership → links to Opportunities by Pipeline
-      "fldPC4HjJaYD8NLO7": progressNotes,           // Progress Notes
-      "fld8amOUNSbaAMBDM": date,                    // Date Reported (YYYY-MM-DD)
-    };
-
-    // Reported By — free text label in notes since it's a record link field
-    // We prepend the PM name to the notes so it's visible in Airtable
-    if (reportedBy) {
-      fields["fldPC4HjJaYD8NLO7"] = `Reported by: ${reportedBy}\n\n${progressNotes}`;
-    }
-
-    const response = await fetch(
-      `https://api.airtable.com/v0/${BASE_ID}/${CHECKIN_TABLE}`,
-      {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ fields }),
+      if (!response.ok) {
+        const err = await response.json();
+        console.error("Airtable fetch error:", err);
+        return res.status(response.status).json({ error: "Failed to fetch partnerships", details: err });
       }
-    );
 
-    if (!response.ok) {
-      const err = await response.json();
-      return res.status(response.status).json({ error: "Airtable write failed", details: err });
-    }
+      const data = await response.json();
 
-    const data = await response.json();
-    return res.status(200).json({ success: true, recordId: data.id });
+      for (const record of data.records) {
+        const f = record.fields;
+        partnerships.push({
+          id:             record.id,                          // Airtable record ID — pass this as partnershipRecordId
+          label:          f["fldSHTsSpveA7cHFs"] ?? "",       // Full label e.g. "2025 | Springfield USD | Active"
+          pipelineStatus: f["fldEYuhduLRkJeQ5e"] ?? "",
+          partnerType:    f["fld0ixuKHZrSwnzZV"] ?? [],
+        });
+      }
+
+      offset = data.offset ?? null;
+    } while (offset);
+
+    // Cache hint — partnerships don't change often, so browsers/Vercel can cache for 5 min
+    res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate");
+    return res.status(200).json({ partnerships });
 
   } catch (err) {
-    console.error("Check-in sync error:", err);
+    console.error("get-partnerships error:", err);
     return res.status(500).json({ error: "Internal server error", details: err.message });
   }
 }
