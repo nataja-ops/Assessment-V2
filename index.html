@@ -293,24 +293,23 @@
     </div>
     <div class="detail-content" style="max-width:600px;">
         <div class="tab-content active" style="border-radius:12px;margin-top:0;">
+            <div class="form-group">
+                <label>Partnership *</label>
+                <select id="newPartnerSelect" onchange="onPartnershipSelected(this.value)">
+                    <option value="">Loading partnerships…</option>
+                </select>
+                <div style="font-size:0.78rem;color:var(--gray-400);margin-top:0.3rem;">
+                    Pulling from Opportunities by Pipeline in Airtable
+                </div>
+            </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label>Partner / Organization Name *</label>
-                    <input type="text" id="newPartnerName" placeholder="e.g. Springfield Unified School District">
-                </div>
-                <div class="form-group">
-                    <label>Partner Type *</label>
+                    <label>Rubric Type *</label>
                     <select id="newPartnerType">
                         <option value="">Select type…</option>
                         <option value="district">District</option>
                         <option value="school">School</option>
                     </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label>State</label>
-                    <input type="text" id="newPartnerState" placeholder="e.g. MA">
                 </div>
                 <div class="form-group">
                     <label>Partnership Start Date</label>
@@ -592,30 +591,67 @@ async function syncToAirtable(assessType) {
     const p = partners.find(x => x.id === currentPartnerId);
     if (!p) return;
     const ratings = assessments[currentPartnerId]?.[assessType]?.ratings || {};
-    const scores = {};
+    const scores  = {};
     for (const [sdId] of Object.entries(SD_TO_FIELD)) {
         if (ratings[sdId] !== undefined) scores[sdId] = ratings[sdId];
     }
+
+    // Map assessment type to Airtable select value
+    const typeMap = { initial: 'Pre-Assessment', goals: 'Goals Assessment', final: 'Final Assessment' };
+
     const payload = {
-        partnerName:    p.name,
-        assessmentType: assessType === 'initial' ? 'Pre-Assessment' : 'Final Assessment',
+        // Use stored Airtable record IDs directly — skips name lookups
+        ...(p.airtableRecordId ? { partnershipRecordId: p.airtableRecordId } : { partnerName: p.name }),
+        // Pass assessment record ID so we UPDATE instead of CREATE (after first save)
+        ...(p.airtableAssessmentId ? { airtableAssessmentId: p.airtableAssessmentId } : {}),
+        assessmentType: typeMap[assessType] || 'Pre-Assessment',
         status:         'Complete',
         notes:          assessType === 'final'
                             ? (document.getElementById('finalNotes')?.value || '')
                             : (p.notes || ''),
         ...scores,
     };
+
     try {
-        const res = await fetch('/api/sync-to-airtable', {
+        const res  = await fetch('/api/sync-to-airtable', {
             method:  'POST',
             headers: { 'Content-Type': 'application/json' },
             body:    JSON.stringify(payload),
         });
         const json = await res.json();
         if (!res.ok) throw new Error(json.error || 'Sync failed');
+
+        // On first save (initial), store the Airtable Assessment record ID
+        if (!p.airtableAssessmentId && json.recordId) {
+            p.airtableAssessmentId = json.recordId;
+            persist(); // save the ID so goals & final can update the same record
+        }
         console.log('✓ Synced to Airtable:', json.recordId);
     } catch (err) {
         console.warn('Airtable sync failed (data still saved locally):', err.message);
+    }
+}
+
+async function syncCheckin(checkin) {
+    const p = partners.find(x => x.id === currentPartnerId);
+    if (!p?.airtableRecordId) return; // need partnership record ID to link
+    try {
+        const res  = await fetch('/api/sync-checkin', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify({
+                partnershipRecordId: p.airtableRecordId,
+                date:                checkin.date,
+                notes:               checkin.notes,
+                reportedBy:          currentPM,
+                ratings:             checkin.ratings,
+            }),
+        });
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || 'Check-in sync failed');
+        console.log('✓ Check-in synced to Airtable:', json.recordId);
+    } catch (err) {
+        console.warn('Check-in sync failed (saved locally):', err.message);
     }
 }
 
@@ -723,22 +759,56 @@ function getOverallScore(partnerId, type) {
 }
 
 // ══════════════════════════════════════════════════
-// ADD PARTNER
+// ADD PARTNER — loads dropdown from Airtable
 // ══════════════════════════════════════════════════
-function showAddPartner() {
+let airtablePartnerships = []; // cache fetched partnerships
+
+async function showAddPartner() {
     showScreen('screenAddPartner');
     document.getElementById('newPartnerStart').value = new Date().toISOString().slice(0, 10);
+    const sel = document.getElementById('newPartnerSelect');
+    sel.innerHTML = '<option value="">Loading partnerships…</option>';
+    try {
+        const res  = await fetch('/api/get-partnerships');
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || 'Failed to load');
+        airtablePartnerships = json.partnerships;
+        // Filter out partnerships already added by this PM
+        const usedIds = partners.filter(p => p.pm === currentPM).map(p => p.airtableRecordId);
+        const available = airtablePartnerships.filter(p => !usedIds.includes(p.id));
+        sel.innerHTML = '<option value="">Select a partnership…</option>' +
+            available.map(p => `<option value="${p.id}">${p.label}</option>`).join('');
+    } catch (err) {
+        sel.innerHTML = '<option value="">⚠ Could not load partnerships</option>';
+        console.error('Partnership load error:', err);
+    }
+}
+
+function onPartnershipSelected(recordId) {
+    const match = airtablePartnerships.find(p => p.id === recordId);
+    if (!match) return;
+    // Auto-fill Partner Type if we can infer it
+    const typeEl = document.getElementById('newPartnerType');
+    const types  = match.partnerType || [];
+    if (types.some(t => /school/i.test(t)))    typeEl.value = 'school';
+    else if (types.some(t => /district/i.test(t))) typeEl.value = 'district';
+    else typeEl.value = '';
 }
 
 function saveNewPartner() {
-    const name = document.getElementById('newPartnerName').value.trim();
-    const type = document.getElementById('newPartnerType').value;
-    if (!name || !type) { showAlert('addPartnerAlert', 'Partner name and type are required.', 'error'); return; }
-    const id = genId();
-    const p  = { id, name, type, pm: currentPM,
-        state:     document.getElementById('newPartnerState').value.trim(),
+    const recordId = document.getElementById('newPartnerSelect').value;
+    const type     = document.getElementById('newPartnerType').value;
+    if (!recordId) { showAlert('addPartnerAlert', 'Please select a partnership.', 'error'); return; }
+    if (!type)     { showAlert('addPartnerAlert', 'Please select a partner type.', 'error'); return; }
+    const match = airtablePartnerships.find(p => p.id === recordId);
+    const name  = match?.label || recordId;
+    const id    = genId();
+    const p     = {
+        id, name, type, pm: currentPM,
+        airtableRecordId: recordId,           // store so sync uses it directly
         startDate: document.getElementById('newPartnerStart').value,
-        notes:     document.getElementById('newPartnerNotes').value.trim() };
+        notes:     document.getElementById('newPartnerNotes').value.trim(),
+    };
     partners.push(p);
     assessments[id] = { initial: { ratings: {}, saved: false }, final: { ratings: {}, saved: false } };
     goals[id]    = [];
@@ -1010,9 +1080,12 @@ function saveCheckin() {
     const selects = document.querySelectorAll('#checkinRubric select[data-sdid]');
     const ratings = {};
     selects.forEach(sel => { if (sel.value !== '') ratings[sel.dataset.sdid] = parseInt(sel.value); });
+    const checkin = { id: genId(), date, notes, ratings };
     if (!checkins[currentPartnerId]) checkins[currentPartnerId] = [];
-    checkins[currentPartnerId].push({ id: genId(), date, notes, ratings });
-    persist(); cancelCheckin(); renderCheckins();
+    checkins[currentPartnerId].push(checkin);
+    persist();
+    syncCheckin(checkin); // non-blocking — creates annotation in Partner Progress Reporting
+    cancelCheckin(); renderCheckins();
 }
 
 function cancelCheckin() { document.getElementById('checkinForm').style.display = 'none'; }
