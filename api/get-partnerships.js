@@ -1,3 +1,15 @@
+// ============================================================
+// FILE: api/get-partnerships.js
+//
+// HOW TO ADD:
+// 1. In your GitHub repo click Add file → Create new file
+// 2. Type  api/get-partnerships.js  as the filename
+// 3. Paste this entire file → Commit directly to main
+//
+// WHAT IT DOES:
+// Fetches active partnerships from Airtable Opportunities by Pipeline
+// and returns them as a list for the Add Partner dropdown.
+// ============================================================
 
 const BASE_ID        = "apptKJnbKllpLEA8u";
 const PIPELINE_TABLE = "tblfdNFG4TAPFxWbf"; // Opportunities by Pipeline
@@ -18,17 +30,13 @@ export default async function handler(req, res) {
 
     // Airtable paginates at 100 records — loop until all pages are fetched
     do {
-      const params = new URLSearchParams({
-        // Only pull the fields we need for the dropdown
-        "fields[]":              "fldSHTsSpveA7cHFs", // Partnership (formula: "YYYY | Name | Status")
-        "fields[]":              "fldv2qrLtSOEeWY6I", // Accounts (Synced) — for the partner name
-        "fields[]":              "fldEYuhduLRkJeQ5e", // Pipeline Status
-        "fields[]":              "fld0ixuKHZrSwnzZV", // Partner Type (District/School)
-        // Only include active/relevant partnerships — adjust these as needed
-        "filterByFormula":       `AND({Pipeline Status} != "Inactive", {Pipeline Status} != "Rejected", {Pipeline Status} != "On Ice")`,
-        "sort[0][field]":        "fldSHTsSpveA7cHFs",
-        "sort[0][direction]":    "asc",
-      });
+      const params = new URLSearchParams();
+      params.append("fields[]", "fldSHTsSpveA7cHFs"); // Partnership label
+      params.append("fields[]", "fldEYuhduLRkJeQ5e"); // Pipeline Status
+      params.append("fields[]", "fld0ixuKHZrSwnzZV"); // Partner Type (District/School)
+      params.append("filterByFormula", `AND({Pipeline Status} != "Inactive", {Pipeline Status} != "Rejected", {Pipeline Status} != "On Ice")`);
+      params.append("sort[0][field]", "fldSHTsSpveA7cHFs");
+      params.append("sort[0][direction]", "asc");
 
       if (offset) params.set("offset", offset);
 
